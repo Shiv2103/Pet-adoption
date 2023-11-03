@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Information Page</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f5;
+  }
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  .pet-image {
+    width: 100%;
+    display: block;
+  }
+  .pet-info {
+    padding: 25px;
+    line-height: 1.6;
+    background-color: #fafafa;
+  }
+  .pet-info h1 {
+    color: #333;
+    margin-bottom: 0.5em;
+  }
+  .detail {
+    margin-bottom: 10px;
+  }
+  .detail strong {
+    color: #555;
+    margin-right: 10px;
+  }
+  .owner-contact {
+    background-color: #e7e7e7;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 4px;
+  }
+  .owner-contact h2 {
+    margin-top: 0;
+  }
+
+
+
+
+  /* Adoption Form Styles */
+.adoption-form-section {
+  background-color: #fff;
+  padding: 40px;
+  margin-top: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.adoption-form-section h2 {
+  text-align: center;
+  color: #35424a;
+}
+
+#adoption-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+}
+
+#adoption-form label {
+  margin-top: 10px;
+  color: #35424a;
+}
+
+#adoption-form input[type=text],
+#adoption-form input[type=email],
+#adoption-form input[type=tel],
+#adoption-form select,
+#adoption-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#adoption-form input[type=submit] {
+  margin-top: 20px;
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+#adoption-form input[type=submit]:hover {
+  background-color: #e65a4f;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img class="pet-image" src="https://media.istockphoto.com/id/1094256432/photo/cute-dog-portrait.jpg?s=612x612&w=0&k=20&c=HP_pmZFK3cgOQedrv3vuetDTPdr6zFpQb6d8I-pTx7U=" alt="Cute Dog Portrait">
+
+  <div class="pet-info">
+    <h1>MEET TOM</h1>
+    <p class="detail"><strong>Age:</strong> 5 years old</p>
+    <p class="detail"><strong>Breed:</strong> Labrador Retriever</p>
+    <p class="detail"><strong>Weight:</strong> 30kg</p>
+    <p class="detail"><strong>Color:</strong> Golden Brown</p>
+    <p class="detail"><strong>Medical History:</strong> Fully vaccinated, no known diseases. Regular vet check-ups.</p>
+    <p class="detail"><strong>Temperament:</strong> Friendly and playful, good with children and other pets.</p>
+    <p class="detail"><strong>Diet:</strong> High-quality dog food twice a day, loves crunchy treats.</p>
+    <p class="detail"><strong>Favorite Activity:</strong> Fetching balls, long walks in the park, and cuddle time.</p>
+    <p class="detail"><strong>Training:</strong> Responds to basic commands, house-trained, and leash-trained.</p>
+
+    <div class="owner-contact">
+      <h2>Owner's Contact Information:</h2>
+      <p class="detail"><strong>Name:</strong> PUSHKRAJ PATIL</p>
+      <p class="detail"><strong>Phone:</strong> (555) 123-4567</p>
+      <p class="detail"><strong>Email:</strong>RAJPATIL@GMAIL.COM</p>
+      <p class="detail"><strong>Location:</strong> DHARTI UTSAV ,KAMOTHE, NAVI MUMBAI</p>
+    </div>
+
+
+
+
+    <!-- Adoption Application Form Section -->
+<div class="adoption-form-section">
+    <h2>Adoption Application Form</h2>
+    <form id="adoption-form" action="https://formspree.io/f/{your-form-id}" method="POST">
+      <input type="hidden" name="_subject" value="New Adoption Application" />
+      <input type="hidden" name="_replyto" />
+  
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+  
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+  
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+  
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" required>
+  
+      <label for="pet-interest">Pet Interested In</label>
+      <select id="pet-interest" name="pet_interest">
+        <option value="">--Please choose an option--</option>
+        <option value="buddy">Buddy (Golden Retriever)</option>
+        <option value="luna">Luna (Labrador Retriever)</option>
+        <option value="charlie">Charlie (Beagle)</option>
+        <!-- Add other pet options here -->
+      </select>
+  
+      <label for="reason">Reason for Adoption</label>
+      <textarea id="reason" name="reason" rows="4" required></textarea>
+  
+      <input type="submit" class="adoption-btn" value="Submit Application">
+    </form>
+  </div>
+  
+  </div>
+</div>
+
+
+
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+  
+      // Get the form.
+      var form = document.getElementById("adoption-form");
+  
+      // Set up an event listener for the form.
+      form.addEventListener("submit", function(event) {
+        event.preventDefault();
+  
+        // FormData object to hold the form data
+        var formData = new FormData(form);
+  
+        // Fetch API to send the form data via POST to Formspree
+        fetch("https://formspree.io/f/{your-form-id}", {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
+          if (response.ok) {
+            alert("Thanks for your submission!");
+            form.reset();
+          } else {
+            response.json().then(data => {
+              if (Object.hasOwn(data, 'errors')) {
+                alert("There was an error with the submission!");
+              } else {
+                alert("Oops! There was a problem submitting your form");
+              }
+            });
+          }
+        }).catch(error => {
+          alert("Oops! There was a problem submitting your form");
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
